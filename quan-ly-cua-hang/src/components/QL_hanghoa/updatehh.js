@@ -5,35 +5,31 @@ class update extends Component{
     render(){
         return(
             <div className="col-lg-10 add-BG">
-                <h3>Sửa Tài Khoản</h3>
+                <h3>Sửa Thông Tin Hàng Hóa</h3>
                 <div className="row">
                     <div className="col-2"></div>
                     <div className="col-8">
                     <form>
                 <table className="table table-hover">
                     <tr>
-                        <td>Tên Đăng Nhập:</td>
-                        <td><input className="form-control" name="tendangnhap" placeholder="" /></td>
+                        <td>Mã Loại:</td>
+                        <td><input className="form-control" name="maloai" placeholder="" /></td>
                     </tr>
                     <tr>
-                        <td>Họ Tên:</td>
-                        <td><input className="form-control" name="ten" placeholder="" /></td>
+                        <td>Mã NCC:</td>
+                        <td><input className="form-control" name="mancc" placeholder="" /></td>
                     </tr>
                     <tr>
-                        <td>Số Điện Thoại:</td>
-                        <td><input className="form-control" name="sdt" placeholder="" /></td>
+                        <td>Mã HH:</td>
+                        <td><input className="form-control" name="mahh" placeholder="" /></td>
                     </tr>
                     <tr>
-                        <td>Email:</td>
-                        <td><input className="form-control" type="email" name="email"  /></td>
+                        <td>Tên HH:</td>
+                        <td><input className="form-control" type="text" name="tenhh"  /></td>
                     </tr>
                     <tr>
-                        <td>Địa Chỉ:</td>
-                        <td><input className="form-control" type="text" name="diachi"  /></td>
-                    </tr>
-                    <tr>
-                        <td>Level:</td>
-                        <td><input className="form-control" type="number" name="level"  /></td>
+                        <td>Mô Tả:</td>
+                        <td><input className="form-control" type="text" name="mota"  /></td>
                     </tr>
                     
                 </table>

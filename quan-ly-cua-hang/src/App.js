@@ -11,7 +11,7 @@ import IndexNCC from './components/QL_nhacungcap/indexncc';
 import IndexLoai from './components/QL_loaihang/indexloai';
 import IndexNV from './components/QL_nhanvien/indexnv';
 import IndexTK from './components/QL_taikhoan/indextk';
-
+import IndexHH from './components/QL_hanghoa/indexhh';
 class App extends Component{
   render(){
     return(
@@ -30,6 +30,7 @@ class App extends Component{
             <Route path='/indexloai' component={IndexLoai} />
             <Route path='/indexnv' component={IndexNV} />
             <Route path='/indextk' component={IndexTK} />
+            <Route path='/indexhh' component={IndexHH} />
           <div className="col-lg-10">  
           <Right />
           </div>

@@ -34,7 +34,7 @@ class index extends Component{
                         <th>SĐT</th>
                         <th>Email</th>
                         <th>Địa Chỉ</th>
-                        <th colSpan="3">Chức năng</th>
+                        <th >Chức năng</th>
                     </tr>
                     <tbody>
                     <tr>
@@ -44,9 +44,11 @@ class index extends Component{
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><button className="btn btn-success"><i className="fa fa-eye"></i><Link to={'/'}>Xem</Link></button></td>
-                        <td><button className="btn btn-primary"><i className="fa fa-edit"></i><Link to={'/updatencc'}>Sửa</Link></button></td>
-                        <td><button className="btn btn-danger"><i className="fa fa-trash"></i><Link to={'/'}>Xóa</Link></button></td>
+                        <td className="btn-group" style={{border: '0px'}}>
+                        <button className="btn btn-success"><i className="fa fa-eye"></i><Link to={'/'}>Xem</Link></button>
+                        <button className="btn btn-primary"><i className="fa fa-edit"></i><Link to={'/updatencc'}>Sửa</Link></button>
+                        <button className="btn btn-danger"><i className="fa fa-trash"></i><Link to={'/'}>Xóa</Link></button>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

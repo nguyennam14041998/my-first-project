@@ -288,5 +288,7 @@ margin-bottom: 20px;
 .add-BG button{
   margin-left: 10px;
 }
-
+.btn-group{
+  border: 0px;
+}
 

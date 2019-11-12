@@ -49,7 +49,7 @@ class index extends Component{
                         <th>Giá Bán Lẻ (vnđ)</th>
                         <th>Giá bán sỉ (vnđ)</th>
                         <th>Ngày cập nhật</th>
-                        <th colSpan="3">Chức năng</th>
+                        <th >Chức năng</th>
                     </tr>
                     <tbody>
                     <tr>
@@ -59,9 +59,11 @@ class index extends Component{
                         <td>{this.state.giabanle}</td>
                         <td>{this.state.giabansi}</td>
                         <td>{this.state.ngaycapnhat}</td>
-                        <td><button className="btn btn-success"><i className="fa fa-eye"></i><Link to={'/'}>Xem</Link></button></td>
-                        <td><button className="btn btn-primary"><i className="fa fa-edit"></i><Link to={'/update'}>Sửa</Link></button></td>
-                        <td><button className="btn btn-danger"><i className="fa fa-trash"></i><Link to={'/'}>Xóa</Link></button></td>
+                        <td className="btn-group" style={{border: '0px'}}>
+                        <button className="btn btn-success"><i className="fa fa-eye"></i><Link to={'/'}>Xem</Link></button>
+                        <button className="btn btn-primary"><i className="fa fa-edit"></i><Link to={'/update'}>Sửa</Link></button>
+                        <button className="btn btn-danger"><i className="fa fa-trash"></i><Link to={'/'}>Xóa</Link></button>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
