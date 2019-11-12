@@ -1,0 +1,292 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.all{
+  font-size: 12px;
+}
+.all input{
+  font-size: 12px;
+}
+.all button{
+  font-size: 12px;
+}
+
+
+/*TOP*/
+.main-header{
+  background-color: rgb(0, 174, 255);
+  padding-top:20px;
+  padding-bottom: 20px;
+  
+
+}
+
+.App-logo{
+  color: white;
+  font-size: 20px;
+  margin-left: 50px;
+  
+}
+.user-image{
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  margin-left: 200px;
+  padding: 0px;
+}
+.hidden-xs{
+  color: white;
+  padding: 0;
+  
+}
+
+
+
+
+/*Body-left*/
+
+
+.body-left{
+  margin-top: 20px;
+}
+.body-left input{
+  font-size: 12px;
+}
+.body-left span{
+ margin-left: 55px;
+
+ 
+}
+.body-left table{
+  color: black;
+}
+.body-left a{
+  color: black;
+}
+.body-left td{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#search-dashboard{
+margin: 10px;
+
+width: 200px;
+}
+
+
+
+
+/* Body-Right */
+
+.col-lg-10{
+  background-color: rgb(252, 245, 245);
+}
+
+.body-right{
+  background-color: rgb(252, 245, 245);
+}
+.body-right table{
+  margin-left: 20px;
+}
+.content-header {
+  position: relative;
+  padding: 15px 15px 0 15px;
+}
+.content-header > h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.content-header > h1 > small {
+  font-size: 15px;
+  display: inline-block;
+  padding-left: 4px;
+  font-weight: 300;
+}
+
+.tb-right{
+  background-color: rgb(0, 225, 255);
+}
+
+
+
+.info-box {
+  display: block;
+  min-height: 90px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+.info-box small {
+  font-size: 14px;
+}
+.info-box .progress {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 5px -10px 5px -10px;
+  height: 2px;
+}
+.info-box .progress,
+.info-box .progress .progress-bar {
+  border-radius: 0;
+}
+.info-box .progress .progress-bar {
+  background: #fff;
+}
+.info-box-icon {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  display: block;
+  float: left;
+  height: 90px;
+  width: 90px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 90px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.eye{
+  background-color: rgb(0, 225, 255);
+}
+.hanghoa{
+  background-color: rgb(63, 223, 97);
+}
+.banggia{
+  background-color: rgb(250, 174, 9);
+}
+.nhanvien{
+  background-color: red;
+}
+.info-box-icon > img {
+  max-width: 100%;
+}
+.info-box-content {
+  padding: 5px 10px;
+  margin-left: 90px;
+}
+.info-box-number {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+}
+.progress-description,
+.info-box-text {
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info-box-text {
+  text-transform: uppercase;
+}
+.info-box-more {
+  display: block;
+}
+.progress-description {
+  margin: 0;
+}
+
+
+.view-hoadon{
+  margin-top: 100px;
+  margin-right: 30px;
+}
+
+.view-hoadon h4{
+  margin-bottom: 30px;
+  margin-left: 17px;
+  
+}
+
+.btn-flat{
+  margin-left: 20px;
+  
+  background-color:rgb(0, 225, 255) ;
+}
+/* footer admin*/
+
+.footer-admin{
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: darkseagreen;
+}
+.footer-admin marquee{
+  color: blue;
+  font-size: 15px;
+}
+
+/*  Bảng giá */
+
+.index-admin h3{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.index-admin table{
+  margin-left: 50px;
+  
+  
+}
+
+.btn-search{
+  background-color: white;
+}
+.index-admin table button a{
+  color: white;
+  margin-left: 10px;
+  font-size: 13px;
+}
+#btnadd-BG{
+  
+  
+  font-size: 13px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+#btnadd-BG a{
+  color: white;
+  margin-left: 10px;
+}
+.index-admin table button i{
+  font-size: 13px;
+}
+#search-BG{
+ 
+  margin-left: 40px;
+  margin-bottom: 100px;
+}
+
+.add-BG h3{
+text-align: center;
+margin-top: 30px;
+margin-bottom: 20px;
+}
+.add-BG button{
+  margin-left: 10px;
+}
+
+
