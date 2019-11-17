@@ -19,9 +19,6 @@ class index extends Component{
         return(
             <Router>
             <Switch>
-            
-                
-           
                 <Route exact path='/add' component={AddBG} />
                 <Route exact path='/update' component={UpdateBG} />
             <div className=" col-lg-10 index-admin">

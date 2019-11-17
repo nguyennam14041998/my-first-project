@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
+import axios from 'axios';
 import Top from './components/top';
 import Left from './components/left';
 import Right from './components/right';
