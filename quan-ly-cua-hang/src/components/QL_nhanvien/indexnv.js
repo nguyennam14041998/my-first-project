@@ -18,13 +18,16 @@ class index extends Component{
 3
 4
 5
-    deletenv(id) {
-    axios .delete('http://localhost:8080/api/employees/' + id)
-    .then(response => {
-        this.setState({ employees: response.data });
+    handleDelete = (item) => {
+    const newsId = item.id;
+    axios.delete('http://localhost:8080/api/employees/'+newsId+'/')
+    .then(response =>{
+        this.setState({
+            employees: response.employees.filter(elm => elm.id !== newsId)
+        })
     })
     .catch(err => console.log(err));
-    }
+  }
     componentDidMount() {
     	axios .get("http://localhost:8080/api/employees/") 
       	.then(response => {
@@ -79,7 +82,7 @@ class index extends Component{
                                 <button className="btn btn-success"><i className="fa fa-eye"></i><Link to={'/'}>Xem</Link></button>
                                 <button className="btn btn-primary"><i className="fa fa-edit"></i><Link to={'/updatenv'}>Sửa</Link></button>
                                 <form onSubmit={this.handleSubmit}>
-                                <button type="submit" onClick={()=>this.state.employees.deletenv(item.id)} className="btn btn-danger"><i className="fa fa-trash"></i>Xóa</button>
+                                <button type="submit" onClick={()=>this.handleDelete(item)} className="btn btn-danger"><i className="fa fa-trash"></i>Xóa</button>
                                 </form>
                                 </td>
                             </tr>
