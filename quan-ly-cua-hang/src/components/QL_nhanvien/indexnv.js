@@ -10,10 +10,6 @@ class index extends Component{
         super(props)
         this.state = {
             employees: [],
-            name:'',
-            phone:'',
-            address:'',
-            email:'',
             redirect: false,
             modalIsOpen: false   
         }; 
@@ -53,10 +49,12 @@ class index extends Component{
   openModal = (item) => {
     this.setState({
       modalIsOpen: true,
+      id: item.id,
       name: item.name,
       phone: item.phone,
       address: item.address,
-      email: item.email
+      email: item.email,
+      createdAt:item.createdAt
     });
   };
   handleChange = (event) => {
@@ -67,21 +65,21 @@ class index extends Component{
       [name]: value
     });
   };
-  handleUpdate = (item) =>{
-    const newsId = item.id;
+
+  
+  handleUpdate = () =>{
+
+    const newsId = this.state.id;
     const items ={
         name: this.state.name,
         phone: this.state.phone,
         email: this.state.email,
-        address: this.state.address
+        address: this.state.address,
+        createdAt: this.state.createdAt
     }
+    console.log(items);
+  
     axios.put('http://localhost:8080/api/employees/'+newsId+'/',items)
-    .then(response =>{
-      this.setState({
-        employees: response.employees.filter(elm => elm.id !== newsId)
-        
-    })
-    })
     .catch(err => console.log(err));
   };
     
@@ -123,7 +121,7 @@ class index extends Component{
                     {this.state.employees.map(item => (
                       count ++,
                             <tr key={item.id}>
-                                <td>{count}</td>
+                                <td>{count}</td>       
                                 <td>{item.name}</td>
                                 <td>{item.phone}</td>
                                 <td>{item.email}</td>
@@ -151,7 +149,11 @@ class index extends Component{
           <form onSubmit={this.handleUpdate}>
             <h3>Sửa thông tin</h3>
                 <table className="table table-hover">
-               
+                      
+                <tr>
+                        <td>ID:</td>
+                        <td><input className="form-control" type="text" name="id" onChange={this.handleChange} value={this.state.id} /></td>
+                    </tr>
                     <tr>
                         <td>Tên Nhân Viên:</td>
                         <td><input className="form-control" type="text" name="name" onChange={this.handleChange} value={this.state.name} /></td>
