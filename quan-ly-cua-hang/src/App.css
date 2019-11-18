@@ -291,4 +291,14 @@ margin-bottom: 20px;
 .btn-group{
   border: 0px;
 }
-
+.ReactModal__Content{
+  font-size: 12px;
+  width: 600px;
+  height: 500px;
+}
+.ReactModal__Content input{
+  font-size: 12px;
+}
+.ReactModal__Content button{
+  font-size: 12px;
+}

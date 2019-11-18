@@ -10,28 +10,26 @@ class index extends Component{
         super(props)
         this.state = {
             employees: [],
+            name:'',
+            phone:'',
+            address:'',
+            email:'',
             redirect: false,
             modalIsOpen: false   
-        };   
+        }; 
+        this.handleChange = this.handleChange.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
     
-
-    componentWillMount() {
-        Modal.setAppElement('body');
-      };
-    
-      openModal = () => {
-        this.setState({
-          modalIsOpen: true,
-        });
-      };
-    
-      closeModal = () => {
-        this.setState({
-          modalIsOpen: false
-        });
-      };
-
+// hiển thị
+    componentDidMount() {
+    	axios .get("http://localhost:8080/api/employees/") 
+      	.then(response => {
+        	this.setState({ employees: response.data });
+      	})
+		.catch(err => console.log(err));
+    } 
+//xóa
     handleDelete = (item) => {
     const newsId = item.id;
     axios.delete('http://localhost:8080/api/employees/'+newsId+'/')
@@ -42,6 +40,16 @@ class index extends Component{
     })
     .catch(err => console.log(err));
   }
+//update
+  componentWillMount() {
+    Modal.setAppElement('body');
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalIsOpen: false
+    });
+  };
   openModal = (item) => {
     this.setState({
       modalIsOpen: true,
@@ -51,28 +59,34 @@ class index extends Component{
       email: item.email
     });
   };
+  handleChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value
+    });
+  };
   handleUpdate = (item) =>{
     const newsId = item.id;
-    axios.put('http://localhost:8080/api/employees/'+newsId+'/')
+    const items ={
+        name: this.state.name,
+        phone: this.state.phone,
+        email: this.state.email,
+        address: this.state.address
+    }
+    axios.put('http://localhost:8080/api/employees/'+newsId+'/',items)
     .then(response =>{
-        this.setState({
-                name: this.state.name,
-                phone: this.state.phone,
-                email: this.state.email,
-                address: this.state.address
-        })
+      this.setState({
+        employees: response.employees.filter(elm => elm.id !== newsId)
+        
+    })
     })
     .catch(err => console.log(err));
-  }
-    componentDidMount() {
-    	axios .get("http://localhost:8080/api/employees/") 
-      	.then(response => {
-        	this.setState({ employees: response.data });
-      	})
-		.catch(err => console.log(err));
-    } 
+  };
+    
     render(){
-    	
+    	var count =0;
         return(
             <Router>
                 <Switch>
@@ -107,8 +121,9 @@ class index extends Component{
                     </tr>
                     <tbody>
                     {this.state.employees.map(item => (
+                      count ++,
                             <tr key={item.id}>
-                                <td>{item.id}</td>
+                                <td>{count}</td>
                                 <td>{item.name}</td>
                                 <td>{item.phone}</td>
                                 <td>{item.email}</td>
@@ -134,31 +149,31 @@ class index extends Component{
           
           <div>
           <form onSubmit={this.handleUpdate}>
+            <h3>Sửa thông tin</h3>
                 <table className="table table-hover">
-                <tr>
-                        <td>id:</td>
-                        <td><input className="form-control" type="text" name="id"  value={this.state.id} /></td>
-                    </tr>
+               
                     <tr>
                         <td>Tên Nhân Viên:</td>
-                        <td><input className="form-control" type="text" name="name" onChange={this.handleUpdate} value={this.state.name} /></td>
+                        <td><input className="form-control" type="text" name="name" onChange={this.handleChange} value={this.state.name} /></td>
                     </tr>
                     <tr>
                         <td>Số Điện Thoại:</td>
-                        <td><input className="form-control" type="number" name="phone" onChange={this.handleUpdate} value={this.state.phone} /></td>
+                        <td><input className="form-control" type="number" name="phone" onChange={this.handleChange} value={this.state.phone} /></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input className="form-control" type="email" name="email" onChange={this.handleUpdate} value={this.state.email} /></td>
+                        <td><input className="form-control" type="email" name="email" onChange={this.handleChange} value={this.state.email} /></td>
                     </tr>
                     <tr>
                         <td>Địa Chỉ:</td>
-                        <td><input className="form-control" type="text" name="address" onChange={this.handleUpdate}  value={this.state.address} /></td>
+                        <td><input className="form-control" type="text" name="address" onChange={this.handleChange}  value={this.state.address} /></td>
                     </tr>
                    
                 </table>
+                <div className="btn-group">
                 <button type="submit" className="btn btn-danger"  >Sửa</button>
                 <button onClick={this.closeModal} className="btn btn-success">Close</button>
+                </div>
                 </form>
           </div>
         </Modal>

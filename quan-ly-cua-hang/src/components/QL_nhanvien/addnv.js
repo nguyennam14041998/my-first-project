@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+
 class add extends Component{
 
     constructor(props){
@@ -34,10 +35,16 @@ class add extends Component{
         }
         let uri = 'http://localhost:8080/api/employees/';
         axios.post(uri, items).then((response) => {
-            return <Redirect push to='/indexql' />
+           
+            this.setState({ 
+                redirect: true,
+            });
         });
       }
     render(){
+        if (this.state.redirect) {
+            return <Redirect push to='/indexnv' />;
+          }
         return(
             <div className="col-lg-10 add-BG">
                 <h3>Thêm Nhân Viên</h3>
